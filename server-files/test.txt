@@ -1,2 +1,32 @@
 Hello Ismail!
 This is my first MCP file.
+
+ismail-mcp-server - বিবরণ
+=========================
+ 
+এটি একটি সাধারণ MCP (Model Context Protocol) সার্ভার, যা TypeScript দিয়ে তৈরি।
+সার্ভারটি stdio-এর মাধ্যমে Claude-এর সাথে যুক্ত হয়।
+ 
+টুলসমূহ
+--------
+1. hello
+   - কাজ: নাম দিলে অভিবাদন ফেরত দেয়।
+   - ইনপুট: name (স্ট্রিং)
+   - উদাহরণ: name = "Ismail" -> "Hello Ismail! Welcome to my MCP server."
+ 
+2. read_file
+   - কাজ: server-files ফোল্ডার থেকে একটি টেক্সট ফাইল পড়ে।
+   - ইনপুট: fileName (স্ট্রিং)
+   - নিরাপত্তা: server-files ফোল্ডারের বাইরের ফাইল পড়া যায় না।
+ 
+প্রজেক্টের কাঠামো
+-----------------
+- src/index.ts     : সার্ভারের মূল কোড
+- dist/index.js    : কম্পাইল করা কোড (এটিই চলে)
+- server-files/    : যে ফাইলগুলো read_file দিয়ে পড়া যায়
+ 
+চালানোর নিয়ম
+-------------
+1. কোড বদলালে: npm run build
+2. Claude Desktop পুরোপুরি বন্ধ করে (Quit) আবার খুলুন।
+3. নতুন চ্যাটে টুল ব্যবহার করুন।
